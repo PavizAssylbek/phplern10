@@ -47,10 +47,10 @@
                       ]
                   ];
                   ?>
-                  <?php foreach ($items as $item): ?>
-                    <h2><?php echo $item['title']; ?></h2>
-                    <p class="mb-g"><?php echo $item['text']; ?></p>
-                    <?php endforeach ?>
+                        <?php foreach ($items as $item): ?>
+                            <h2><?php echo $item['title']; ?></h2>
+                            <p class="mb-g"><?php echo $item['text']; ?></p>
+                        <?php endforeach ?>
                         </div>
                         </div>
                     </div>
