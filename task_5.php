@@ -35,7 +35,7 @@
                            <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
                             <?php 
                             
-                            $items = [
+                            $users = [
                                 [
                                     "name" => "Sunny A.",
                                     "position" => '(UI/UX Expert)',
@@ -73,24 +73,24 @@
                                     'bootstrapURL' => "https://wrapbootstrap.com/user/sildur"
                                 ]
                                 ];
-                            foreach($items as $value) {
-                                echo '
+                            ?>
+                            <?php foreach($users as $user): ?>
                                 <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
-                                    <img src="'.$value['photoURL'].'" alt="'.$value['name'].'" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
+                                    <img src="<?php echo $user['photoURL'] ?>" alt="<?php echo $user['name'] ?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
                                     <div class="ml-2 mr-3">
                                         <h5 class="m-0">
-                                        '.$value['name'].' '.$value['position'].'
-                                            <small class="m-0 fw-300">
-                                            '.$value['text'].'
+                                        <?php echo $user['name'] ?> 
+                                        <?php echo $user['position'] ?>
+                                        <small class="m-0 fw-300">
+                                        <?php echo $user['text'] ?>
                                             </small>
                                         </h5>
-                                        <a href="'.$value['twitterURL'].'" class="text-info fs-sm" target="_blank">'.$value['twitterName'].'</a> -
-                                        <a href="'.$value['bootstrapURL'].'" class="text-info fs-sm" target="_blank" title="Contact '.$value['name'].'"><i class="fal fa-envelope"></i></a>
+                                        <a href="<?php echo $user['twitterURL'] ?>" class="text-info fs-sm" target="_blank"><?php echo $user['twitterName'] ?></a> -
+                                        <a href="<?php echo $user['bootstrapURL'] ?>" class="text-info fs-sm" target="_blank" title="Contact <?php echo $user['name'] ?>"><i class="fal fa-envelope"></i></a>
                                     </div>
-                                </div>';
-                            }
+                                </div>
+                            <?php endforeach ?>
                             
-                            ?>
                         </div>
                         </div>
                     </div>

@@ -56,20 +56,21 @@
                 $mysqli = new mysqli($db_host, $db_user, $db_pass, $db_name); // коннект с сервером бд
                 $mysqli->set_charset("utf8mb4"); // задаем кодировку
                 
-                $result = $mysqli->query('SELECT * FROM `level8`'); // запрос на выборку
-                foreach($result as $value)// получаем все строки в цикле по одной
-                    echo '<tr>
-                            <th scope="row">'.$value['id'].'</th>
-                            <td>'.$value['firstName'].'</td>
-                            <td>'.$value['lastName'].'</td>
-                            <td>@'.$value['username'].'</td>
-                            <td>
-                                <a href="show.php?id='.$value['id'].'" class="btn btn-info">Редактировать</a>
-                                <a href="edit.php?id='.$value['id'].'" class="btn btn-warning">Изменить</a>
-                                <a href="delete.php?id='.$value['id'].'" class="btn btn-danger">Удалить</a>
-                            </td>
-                        </tr>'
+                $users = $mysqli->query('SELECT * FROM `users`'); // запрос на выборку
                 ?>
+                <?php foreach($users as $user): ?>
+                    <tr>
+                            <th scope="row"><?php echo $user['id'] ?> </th>
+                            <td><?php echo $user['firstName'] ?> </td>
+                            <td><?php echo $user['lastName'] ?> </td>
+                            <td>@<?php echo $user['username'] ?> </td>
+                            <td>
+                                <a href="show.php?id=<?php echo $user['id'] ?> " class="btn btn-info">Редактировать</a>
+                                <a href="edit.php?id=<?php echo $user['id'] ?> " class="btn btn-warning">Изменить</a>
+                                <a href="delete.php?id=<?php echo $user['id'] ?> " class="btn btn-danger">Удалить</a>
+                            </td>
+                        </tr>
+                  <?php endforeach ?>
                                        
                                     </tbody>
                                 </table>

@@ -48,16 +48,17 @@
                                         'link' => false
                                     ]
                                     ];
-
-                                foreach ($items as $key => $value) {
-                                    if($value['link']) {
-                                        echo '<li class="breadcrumb-item"><a href="#">'.$value['title'].'</a></li>';
-                                    } else {
-                                        echo '<li class="breadcrumb-item active">'.$value['title'].'</li>';
-                                    }
-                                }
+                                ?>
+                                <?php foreach ($items as $item): ?>
+                                    <?php if($item['link']) : ?>
+                                        <li class="breadcrumb-item">
+                                            <a href="#"><?php echo $item['title'] ?></a>
+                                        </li>
+                                    <?php else : ?>
+                                        <li class="breadcrumb-item"><?php echo $item['title'] ?></li>
+                                    <?php endif; ?>
+                                <?php endforeach ?>
                             
-                            ?>
                             </ol>
                         </div>
                     </div>

@@ -35,29 +35,9 @@
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                <?php
-
-                                    echo "<pre>".print_r($_POST)."</pre>";
-                                
-                                    $firstName = $_POST['firstName'];
-                                    $lastName = $_POST['lastName'];
-                                    $username = $_POST['username'];
-
-                                    $db_host='localhost'; // ваш хост
-                                    $db_name='tester'; // ваша бд
-                                    $db_user='root'; // пользователь бд
-                                    $db_pass=''; // пароль к бд
-                                    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);// включаем сообщения об ошибках
-                                    $mysqli = new mysqli($db_host, $db_user, $db_pass, $db_name); // коннект с сервером бд
-                                    
-                $sql = $mysqli->query("INSERT INTO level8 (firstName, lastName, username) VALUES ('".$firstName."', '".$lastName."', '".$username."')");
-                echo $sql;
-                                    ?>
-                                    <form action="" method="POST">
+                                    <form action="lesson9.php" method="POST">
                                         <label class="form-label" for="simpleinput">Text</label>
-                                        <input type="text" id="simpleinput" class="form-control" name="firstName" value="<?php echo $firstName ?>">
-                                        <input type="text" id="simpleinput" class="form-control" name="lastName" value="<?php echo $lastName ?>">
-                                        <input type="text" id="simpleinput" class="form-control" name="username" value="<?php echo $username ?>">
+                                        <input type="text" id="simpleinput" class="form-control" name="text" >
                                         <button class="btn btn-success mt-3" type="submit">Submit</button>
                                     </form>
                                 </div>

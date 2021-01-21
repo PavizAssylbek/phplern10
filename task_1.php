@@ -103,12 +103,12 @@
                         "fillter" => null
                       ]
                   ];
-                  foreach ($items as $key_1 => $text) {
-                    echo '<li class="list-group-item">
-                      <span data-filter-tags="'.$text['fillter'].'">'.$text['text'].'</span>
-                    </li>';
-                  }
                   ?>
+                  <?php foreach ($items as $item): ?>
+                    <li class="list-group-item">
+                      <span data-filter-tags="<?php echo $item["fillter"]; ?>"><?php echo $item["text"]; ?></span>
+                    </li>
+                    <?php endforeach ?>
                   </ul>
                   <div
                     class="filter-message js-filter-message mt-0 fs-sm"

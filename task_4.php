@@ -33,7 +33,7 @@
                     <div class="panel-container show">
                         <div class="panel-content">
                             <?php 
-                                $items = [
+                                $information = [
                                     [
                                         'title' => 'My Tasks',
                                         'text' => '130 / 500',
@@ -59,19 +59,20 @@
                                         'width' => '84%'
                                     ]
                                     ];
-                                
-                                    foreach($items as $value) {
-                                        echo '<div class="d-flex mt-2">
-                                        '.$value['title'].'
-                                        <span class="d-inline-block ml-auto">'.$value['text'].'</span>
+                                ?>
+                                <?php foreach($information as $info): ?>
+                                    <div class="d-flex mt-2">
+                                        <?php echo $info['title'] ?>
+                                        <span class="d-inline-block ml-auto"><?php echo $info['text'] ?></span>
                                     </div>
                                     <div class="progress progress-sm mb-3">
-                                        <div class="progress-bar '.$value['background'].'" role="progressbar" style="width: '.$value['width'].'" aria-valuenow="'.$value['width'].'" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>';
-                                    }
+                                        <div class="progress-bar <?php echo $info['background'] ?>" role="progressbar" style="width: <?php echo $info['width'] ?>" aria-valuenow="<?php echo $info['width'] ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    
+                                <?php endforeach?>
 
 
-                            ?>
+                            
                         </div>
                     </div>
                 </div>
