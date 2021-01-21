@@ -90,34 +90,22 @@
                   <?php 
                     $items = [
                       [
-                          "text" => "Reports",
-                          "fillter" => [
-                              "reports",
-                              "file",
-                          ],
+                        "text" => "Reports",
+                        "fillter" => "reports file",
                       ],[
-                          "text" => "Analytics",
-                          "fillter" => [
-                              "analytics",
-                              "graphs",
-                          ],
+                        "text" => "Analytics",
+                        "fillter" => "analytics graphs"
                       ],[
-                          "text" =>  "Export",
-                          "fillter" => [
-                              "export",
-                              "download",
-                          ],
+                        "text" =>  "Export",
+                        "fillter" => "export download",
                       ],[
-                          "text" =>  "Storage",
-                          "fillter" => [
-                              null,
-                              null
-                          ],
+                        "text" =>  "Storage",
+                        "fillter" => null
                       ]
                   ];
                   foreach ($items as $key_1 => $text) {
                     echo '<li class="list-group-item">
-                      <span data-filter-tags="'.$text['fillter'][0].' '.$text['fillter'][1].'">'.$text['text'].'</span>
+                      <span data-filter-tags="'.$text['fillter'].'">'.$text['text'].'</span>
                     </li>';
                   }
                   ?>
